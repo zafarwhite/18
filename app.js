@@ -60,8 +60,20 @@ app.post('/courses/edit/:id', function(req, res) {
         res.sendStatus(404);
         return;
     }
-    
+
     course.name = req.body.name;
 
     res.redirect('/courses');
+});
+
+app.get('/cousrses/ delete/:id', function(req, res) {
+    courses = courses.filter(function(course) {
+        return course.id !== parseInt(req.params.id);
+    });
+
+    res.redirect('/courses');
+});
+
+app.listen(3000, function() {
+
 });
