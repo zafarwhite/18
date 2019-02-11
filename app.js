@@ -40,6 +40,28 @@ app.post('/courses/add', function(req, res) {
 
 app.get('/courses/edit/:id', function(req, res) { 
     var course = courses.find(function(course) {
+        return course.id === parseInt(req.params.id);
+    });
 
-    })
-})
+    if (!course) {
+        res.sendStatus(404);
+        return;
+    }
+
+    res.render('edit', {course: course});
+});
+
+app.post('/courses/edit/:id', function(req, res) {
+    var course = courses.find(function(course) {
+        return course.id === parseInt(req.params.id);
+    });
+
+    if (!course) {
+        res.sendStatus(404);
+        return;
+    }
+    
+    course.name = req.body.name;
+
+    res.redirect('/courses');
+});
