@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var courses = require('./data/courses.json');
 var app = express();
 
-app.set('viev engine', pug);
+app.set('view engine', 'pug');
 // app.set('view option', { pretty: true});
 // if(app.get('env') === 'development') {
 //     app.locals.pretty = true;
@@ -75,5 +75,5 @@ app.get('/cousrses/ delete/:id', function(req, res) {
 });
 
 app.listen(3000, function() {
-
+ console.log('Server at loc');
 });

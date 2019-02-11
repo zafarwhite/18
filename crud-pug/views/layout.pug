@@ -1,0 +1,19 @@
+doctype html
+html(lang= 'ru')
+    head
+        meta(charset = 'UTF-8')
+        title= title
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/style.css')
+    body
+        nav.navbar.naabar-inverse.navbar-fixed-top
+            .container
+                #navbar.collapse.navbar-collapse
+                    ul.nav.navabar-nav  
+                        li.active
+                            a(href="/") Домой   
+                        li  
+                            a(href="/courses") Курсы    
+        .container
+            .main-content
+                block content
