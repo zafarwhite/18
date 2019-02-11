@@ -4,6 +4,10 @@ var courses = require('./data/courses.json');
 var app = express();
 
 app.set('viev engine', pug);
+// app.set('view option', { pretty: true});
+// if(app.get('env') === 'development') {
+//     app.locals.pretty = true;
+// }
 
 app.use(bodyParser.urlencoded({extended:  true}));
 app.use(express.static(__dirname + 'public'));
@@ -36,6 +40,6 @@ app.post('/courses/add', function(req, res) {
 
 app.get('/courses/edit/:id', function(req, res) { 
     var course = courses.find(function(course) {
-        
+
     })
 })
