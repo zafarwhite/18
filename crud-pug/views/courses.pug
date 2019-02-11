@@ -9,4 +9,12 @@ block content
                 th course
                 th
                 th
-                
+            tbody
+                each course in course
+                    tr
+                        td= course.id
+                        td= course.name
+                        td(style="width: 50px;"): a(href="/courses/edit" + course.id)
+                            span.glyphicon-pencil
+                        td(style="width: 50px;"): a(href="/courses/delete" + course.id)
+                            span.glyphicon-remove
